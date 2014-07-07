@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mad Lib</title>
+	<script src="http://knockoutjs.com/downloads/knockout-3.1.0.js"></script>
+</head>
+<body>
+	<p><input placeholder="Noun" data-bind="value: noun1" /></p>
+	<p><input placeholder="Noun" data-bind="value: noun2" /></p>
+	<p><input placeholder="Noun" data-bind="value: noun3" /></p>
+	<p><input placeholder="Person" data-bind="value: person" /></p>
+	<p><input placeholder="Body Part" data-bind="value: bodyPart" /></p>
+
+	<p>Welcome to the <strong data-bind="text: noun1"></strong></p>
+	<p>where we've got <strong data-bind="text: noun2"></strong></p>
+	<p>and <strong data-bind="text: noun3"></strong>! </p>
+	<p>Watch it bring <strong data-bind="text: person"></strong></p>
+	<p>to his/her <strong data-bind="text: bodyPart"></strong>!</p>
+
+	<script>
+		// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+		function AppViewModel() {
+    		this.noun1 = ko.observable("");
+   	 		this.noun2 = ko.observable("");
+   	 		this.noun3 = ko.observable("");
+   	 		this.person = ko.observable("");
+   	 		this.bodyPart = ko.observable("");
+		}
+
+		// Activates knockout.js
+		ko.applyBindings(new AppViewModel());
+	</script>
+</body>
+</html>
+
